@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${product.name}">Product Page</title>
+</head>
+    <body>
+        <h1 th:text="${product.name}"></h1>
+        <p>Code: <span th:text="${product.code}"></span></p>
+        <p>Name: <span th:text="${product.name}"></span></p>
+        <p>Description: <span th:text="${product.description}"></span></p>
+        <p>Price: <span th:text="${product.price}"></span></p>
+        <a href="/ProductList">Return to Product List</a>
+        <br>
+        <a href="/">Return to Index</a>
+    </body>
+</html>
+

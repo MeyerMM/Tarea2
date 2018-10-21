@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>New product</title>
+    </head>
+    <body>
+        <h1>New product</h1>
+        <form action="#" th:action="@{/NewProduct}" th:object="${product}" method="post" th:if="${product.name == null}">
+            <p>Code: <input type="text" th:field="*{code}" /></p>
+            <p>Name: <input type="text" th:field="*{name}" /></p>
+            <p>Description: <input type="text" th:field="*{description}" /></p>
+            <p>Price: <input type="text" th:field="*{price}" /></p>
+            <p><input type="submit" value = "Add Product"/>  <input type="reset" VALUE="Reset Fields" /></p>
+        </form>
+        <div th:if="${product.name != null}">
+            <h2>The following product was added:</h2>
+            <p>Code: <span th:text="${product.code}"></span></p>
+            <p>Name: <span th:text="${product.name}"></span></p>
+            <p>Description: <span th:text="${product.description}"></span></p>
+            <p>Price: <span th:text="${product.price}"></span></p>
+            <a href="/NewProduct">Add Product</a><br>
+            <a href="/ProductList">Product List</a><br>
+        </div>
+        <a href="/">Return to Index</a>
+    </body>
+</html>
