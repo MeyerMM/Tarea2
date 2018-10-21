@@ -40,7 +40,7 @@ public class MappingController {
     public String removeProduct(Model model, @PathVariable String code) {
         Product product = productList.removeProduct(code);
         model.addAttribute("product", product);
-        return "removeProduct";
+        return "removedProduct";
     }
 
     // Show form to add a new product
